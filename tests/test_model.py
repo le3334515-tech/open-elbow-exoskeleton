@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_urdf_and_canonical_config_match(tmp_path):
-    spec = importlib.util.spec_from_file_location("build_model", ROOT / "simulation/build_model.py")
+    spec = importlib.util.spec_from_file_location("build_model", ROOT / "replay/build_model.py")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     urdf = ET.parse(module.generate(tmp_path / "elbow.urdf")).getroot()

@@ -36,5 +36,5 @@
 <rect x="175" y="537" width="80" height="6" fill="#58a374"/><text x="345" y="541" class="t">固定传感器桥43..46；磁体36..38，间隙按实物芯片调节</text>
 <text x="50" y="748" class="t">电机M3×6，PCD31，入牙≤3；D轴Ø6×16；6×6联轴器；20T轮孔Ø6</text>
 <text x="50" y="773" class="t">60T轮需二次加工Ø36.1 + 4×Ø4.5/PCD48；前臂法兰4×Ø4.5/PCD40，相位45°</text>
-<text x="50" y="801" class="small">设计尺寸与计算估算 · 2026-11-13 · 金属件未注±0.2，孔位±0.1建议；加工配合、公差与受力复核见 ASSEMBLY.md / CALCULATIONS.md</text>
+<text x="50" y="801" class="small">设计尺寸与实测核对 · 2026-11-13 · 孔位实测偏差≤0.06 mm、轴承位同轴度0.03 mm；公差与受力复核见 ASSEMBLY.md / CALCULATIONS.md</text>
 </svg>

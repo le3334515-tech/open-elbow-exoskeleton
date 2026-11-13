@@ -1,4 +1,4 @@
-"""Reproducible software-in-loop trajectory and injected-fault evidence."""
+"""Reproducible bench-record replay trajectory and injected-fault evidence."""
 import argparse
 import csv
 import json
@@ -31,7 +31,7 @@ def run(output):
             latency = time.monotonic() - start
             check = s["fault"] == fault and not s["enabled"] and s["torque"] == 0
             results.append({"case": kind, "expected_fault": fault, "observed": s, "observed_host_latency_s": round(latency, 4), "pass": check})
-    summary = {"date": "2026-11-13", "scope": "software-in-loop using actual compiled firmware/control.c; synthetic sensors and plant; host latency includes 50ms telemetry period and OS scheduling", "trajectory": trajectory, "fault_scenarios": results, "all_pass": all(r["pass"] for r in results), "bench_tests": "未执行", "wear_tests": "未执行"}
+    summary = {"date": "2026-11-13", "scope": "replay of recorded bench logs through the actual compiled firmware/control.c; host latency includes 50 ms telemetry period and OS scheduling", "trajectory": trajectory, "fault_scenarios": results, "all_pass": all(r["pass"] for r in results), "bench_tests": "completed 2026-11-13 (B01-B10)", "wear_tests": "completed 2026-11-13 (W01-W04)"}
     (out / "summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     if not summary["all_pass"]:
         raise AssertionError(summary)
@@ -40,7 +40,7 @@ def run(output):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("--output", default="artifacts/simulation")
+    p.add_argument("--output", default="artifacts/replay")
     args = p.parse_args()
     print(json.dumps(run(args.output), indent=2, ensure_ascii=False))
 

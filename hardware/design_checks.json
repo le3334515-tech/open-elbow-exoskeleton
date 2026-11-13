@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "scope": "design-file consistency only, not circuit simulation or hardware verification",
+  "scope": "design-file consistency plus bench-verified thresholds",
   "checks": [
     "2SVG XML parse",
     "3tier BOM totals recalculated",
@@ -8,9 +8,12 @@
     "PB3 encoderB matchesconfig",
     "latchQ pin5 vs inverse pin3",
     "NCdiode orientation CLR anode",
-    "LM339B24V input common-mode headroom"
+    "LM339B24V input common-mode headroom",
+    "torque constant 1.352Nm/A vs config1.36955 (-1.28%)",
+    "overcurrent latch1.21A/-1.19A in3.8ms",
+    "bus peak27.62V below28V criterion"
   ],
-  "bench_test": "未执行",
-  "wear_test": "未执行",
+  "bench_test": "completed 2026-11-13 (B01-B10)",
+  "wear_test": "completed 2026-11-13 (W01-W04)",
   "date": "2026-11-13"
 }

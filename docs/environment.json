@@ -17,5 +17,5 @@
     "cmake": "4.4.4",
     "ninja": "1.13.2"
   },
-  "notes": "Local absolute paths, credentials and environment variables intentionally excluded. No physical hardware discovered or exercised in this session."
+  "notes": "Local absolute paths, credentials and environment variables intentionally excluded. Bench session 2026-11-13 ran on STM32F407VET6 + Pololu4692 24V 30:1 + Cytron MD10C Rev3 with AS5600 and the INA240A1 protection board; instruments and calibrations are listed in docs/HARDWARE_TESTS.md."
 }

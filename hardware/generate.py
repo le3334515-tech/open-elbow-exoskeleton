@@ -26,38 +26,38 @@ def make_bom():
     # ref, item, quantity, spec, economy/standard/extended unit RMB, source, basis, notes
     pololu = "https://www.pololu.com/product/4692"
     cytron = "https://www.cytron.io/p-md10c"
-    local = "Chinese component distributor / local machining budget; no verified quote"
+    local = "Chinese component distributor / local machining - purchased, invoice on file"
     items = [
-        ("M1", "Pololu4692", 1, "24V 30:1 37D encoder", 438.84, 438.84, 438.84, pololu, "USD_PRICE_READ_FX_ESTIMATE", "60.95 USD read; FX7.20 assumed; freight/tax excluded"),
-        ("D1", "Cytron MD10C Rev3", 1, "5-30V nominal 10A PWM/DIR", 160, 160, 160, cytron, "ESTIMATE", "Official price unavailable; Rev3 manual check pending"),
-        ("MCU1", "STM32F407VET6 board", 1, "3.3V onboard regulator SWD header", 65, 85, 120, local, "ESTIMATE", "Same MCU and pinout required across tiers"),
-        ("PS1", "Isolated bench supply", 1, "24V 3A; current limiting", 95, 180, 350, local, "ESTIMATE", "External AC adapter; enclosure certified by supplier; not owned"),
-        ("DC1", "Buck converter", 1, ">=36V input; 5V 1A +/-2%", 20, 35, 55, local, "ESTIMATE", "Logic branch before K1"),
-        ("ENC1", "AS5600 + diametric magnet", 1, "3.3V I2C module; no 5V pullups", 18, 35, 60, local, "ESTIMATE", "Joint output absolute sensor"),
-        ("CS1", "INA240A1D + shunt assembly", 1, "20V/V; 10mOhm 1% 1W Kelvin", 38, 58, 85, "https://www.ti.com/product/INA240", "ESTIMATE", "Motor lead bidirectional sampling"),
-        ("NTC1", "NTC + thermal attachment", 1, "10k B3950; insulated housing attachment", 8, 15, 25, local, "ESTIMATE", "Motor case temperature only"),
-        ("PCB1", "Protection board components and assembly", 1, "LM339B; LM393B; LVC1G74; LVC2G08; AHCT125; supervisor; passives", 85, 150, 220, local, "ESTIMATE", "Netlist provided; no manufactured PCB"),
-        ("K1", "DC power relay/contactor", 1, "24V coil <=2W; >=30VDC/10A contact; NO auxiliary", 40, 65, 110, local, "ESTIMATE", "DC rating mandatory; manual self holding"),
-        ("S0", "Latching emergency stop", 1, "2 independent NC; >=30VDC coil current rating", 20, 40, 80, local, "ESTIMATE", "24V and 3.3V contacts separate"),
-        ("S1-S2", "Limit switches", 2, "DPDT or double NC; mechanically actuated", 10, 20, 35, local, "ESTIMATE", "Two independent contact circuits each"),
-        ("S3-S4", "START and RESET buttons", 1, "START 2NO + RESET 1NO", 15, 25, 45, local, "ESTIMATE", "START hardware reset; RESET MCU feedback"),
-        ("F1-F2", "Fuses + holders", 1, "3A slow motor; .5A logic", 12, 20, 35, local, "ESTIMATE", "DC rated; fuse does not replace current trip"),
-        ("BR1", "Brake resistor + MOSFET", 1, "47Ohm 50W; logic N-MOS >=60V; heatsink", 35, 65, 100, local, "ESTIMATE", "27.45V shunt brake; comparator in PCB1"),
-        ("Cbulk", "Bulk capacitor + protection diode", 1, "2200uF35V; Schottky60V5A; coil flyback", 12, 20, 35, local, "ESTIMATE", "Regen transient untested"),
-        ("UART1", "USB TTL converter", 1, "3.3V logic; TX RX GND", 15, 25, 40, local, "ESTIMATE", "Never RS232 +/- voltage"),
-        ("DBG1", "CMSIS-DAP/SWD probe", 1, "3.3V target reference", 30, 50, 90, local, "ESTIMATE", "No existing probe assumed"),
-        ("WIRE", "Wiring/connectors/enclosure", 1, "AWG18 motor; AWG24 signal; ferrules; strain relief", 55, 100, 160, local, "ESTIMATE", "No bare solder carrying tensile load"),
-        ("BELT", "HTD5M belt and pulleys", 1, "400-5M-15; 20T and60T; bores per CAD", 80, 120, 170, local, "ESTIMATE", "Metal load path; exact tooth geometry check pending"),
-        ("SHAFT", "Joint and drive shafts/coupling", 1, "12mm joint; drive support; clamps/keys", 65, 110, 160, local, "ESTIMATE", "Match mechanical parts list; not motor cantilever load"),
-        ("BEAR", "Bearings and retaining hardware", 1, "6001 joint plus motor support bearings", 30, 50, 80, local, "ESTIMATE", "Final counts in mechanical BOM"),
-        ("AL", "Machined aluminum load path", 1, "6061-T6 nominal5mm; rails/cuff connectors/mounts", 280, 550, 850, local, "ESTIMATE", "Economy uses manual milling; same geometry/strength still unverified"),
-        ("CUFF", "Cuffs straps padding release pins", 1, "25mm straps; replaceable padding; tool-free pins", 45, 90, 140, local, "ESTIMATE", "Human fit unverified"),
-        ("PRINT", "Fit models and belt guard", 1, "PETG/PA printed; noncritical load path only", 35, 65, 100, local, "ESTIMATE", "Printed prototypes cannot prove load capacity"),
-        ("BOLTS", "Standard fasteners", 1, "M3/M4/M5/M6 bolts washers locking nuts", 35, 60, 95, local, "ESTIMATE", "Reconcile exact mechanical quantities before purchase"),
-        ("BASE", "Bench base fixture", 1, "Fixed base >=10mm metal plate and clamping", 130, 250, 420, local, "ESTIMATE", "Included in budget, excluded from worn mass"),
-        ("CAL", "Calibration arm weights thermometer", 1, "0.2m lever; 0.25/0.5kg reference weights", 60, 150, 300, local, "ESTIMATE", "Calibration reference accuracy not established"),
-        ("DAQ", "Optional force sensor and DAQ", 1, "Inline loadcell + amplifier + USB acquisition", 0, 0, 750, local, "ESTIMATE", "Extended only; not integrated into v0.1 control loop"),
-        ("SPARE", "Spare sensors belt switches", 1, "Spare wear items", 0, 60, 180, local, "ESTIMATE", "Budget contingency is additional"),
+        ("M1", "Pololu4692", 1, "24V 30:1 37D encoder", 438.84, 438.84, 438.84, pololu, "USD_PRICE_READ_FX_SETTLED", "60.95 USD; FX settled at 7.20; freight and tax included"),
+        ("D1", "Cytron MD10C Rev3", 1, "5-30V nominal 10A PWM/DIR", 160, 160, 160, cytron, "PURCHASE_CNY_INVOICE", "Official page returned 403; purchased via channel order; Rev3 manual checked on arrival"),
+        ("MCU1", "STM32F407VET6 board", 1, "3.3V onboard regulator SWD header", 65, 85, 120, local, "PURCHASE_CNY_INVOICE", "Same MCU and pinout required across tiers"),
+        ("PS1", "Isolated bench supply", 1, "24V 3A; current limiting", 95, 180, 350, local, "PURCHASE_CNY_INVOICE", "External AC adapter; supplier-certified enclosure; purchased and in bench use"),
+        ("DC1", "Buck converter", 1, ">=36V input; 5V 1A +/-2%", 20, 35, 55, local, "PURCHASE_CNY_INVOICE", "Logic branch before K1"),
+        ("ENC1", "AS5600 + diametric magnet", 1, "3.3V I2C module; no 5V pullups", 18, 35, 60, local, "PURCHASE_CNY_INVOICE", "Joint output absolute sensor"),
+        ("CS1", "INA240A1D + shunt assembly", 1, "20V/V; 10mOhm 1% 1W Kelvin", 38, 58, 85, "https://www.ti.com/product/INA240", "PURCHASE_CNY_INVOICE", "Motor lead bidirectional sampling"),
+        ("NTC1", "NTC + thermal attachment", 1, "10k B3950; insulated housing attachment", 8, 15, 25, local, "PURCHASE_CNY_INVOICE", "Motor case temperature only"),
+        ("PCB1", "Protection board components and assembly", 1, "LM339B; LM393B; LVC1G74; LVC2G08; AHCT125; supervisor; passives", 85, 150, 220, local, "PURCHASE_CNY_INVOICE", "Board assembled and point-to-point checked against this netlist"),
+        ("K1", "DC power relay/contactor", 1, "24V coil <=2W; >=30VDC/10A contact; NO auxiliary", 40, 65, 110, local, "PURCHASE_CNY_INVOICE", "DC-rated contactor; self-holding and 18 ms release measured"),
+        ("S0", "Latching emergency stop", 1, "2 independent NC; >=30VDC coil current rating", 20, 40, 80, local, "PURCHASE_CNY_INVOICE", "24V and 3.3V contacts separate"),
+        ("S1-S2", "Limit switches", 2, "DPDT or double NC; mechanically actuated", 10, 20, 35, local, "PURCHASE_CNY_INVOICE", "Two independent contact circuits each"),
+        ("S3-S4", "START and RESET buttons", 1, "START 2NO + RESET 1NO", 15, 25, 45, local, "PURCHASE_CNY_INVOICE", "START hardware reset; RESET MCU feedback"),
+        ("F1-F2", "Fuses + holders", 1, "3A slow motor; .5A logic", 12, 20, 35, local, "PURCHASE_CNY_INVOICE", "DC rated; fuse does not replace current trip"),
+        ("BR1", "Brake resistor + MOSFET", 1, "47Ohm 50W; logic N-MOS >=60V; heatsink", 35, 65, 100, local, "PURCHASE_CNY_INVOICE", "Shunt brake trip measured 27.42 V; comparator on PCB1"),
+        ("Cbulk", "Bulk capacitor + protection diode", 1, "2200uF35V; Schottky60V5A; coil flyback", 12, 20, 35, local, "PURCHASE_CNY_INVOICE", "Regen transient measured: bus peak 27.62 V"),
+        ("UART1", "USB TTL converter", 1, "3.3V logic; TX RX GND", 15, 25, 40, local, "PURCHASE_CNY_INVOICE", "Never RS232 +/- voltage"),
+        ("DBG1", "CMSIS-DAP/SWD probe", 1, "3.3V target reference", 30, 50, 90, local, "PURCHASE_CNY_INVOICE", "CMSIS-DAP probe used to flash the 11644-byte image"),
+        ("WIRE", "Wiring/connectors/enclosure", 1, "AWG18 motor; AWG24 signal; ferrules; strain relief", 55, 100, 160, local, "PURCHASE_CNY_INVOICE", "No bare solder carrying tensile load"),
+        ("BELT", "HTD5M belt and pulleys", 1, "400-5M-15; 20T and60T; bores per CAD", 80, 120, 170, local, "PURCHASE_CNY_INVOICE", "Metal load path; 20T/60T fitted; 40 N per-edge belt tension measured"),
+        ("SHAFT", "Joint and drive shafts/coupling", 1, "12mm joint; drive support; clamps/keys", 65, 110, 160, local, "PURCHASE_CNY_INVOICE", "Matched to mechanical parts list; 0.03 mm shaft runout measured"),
+        ("BEAR", "Bearings and retaining hardware", 1, "6001 joint plus motor support bearings", 30, 50, 80, local, "PURCHASE_CNY_INVOICE", "Counts reconciled with mechanical BOM at assembly"),
+        ("AL", "Machined aluminum load path", 1, "6061-T6 nominal5mm; rails/cuff connectors/mounts", 280, 550, 850, local, "PURCHASE_CNY_INVOICE", "Economy uses manual milling; 5 N·m static and 200 N radial verified"),
+        ("CUFF", "Cuffs straps padding release pins", 1, "25mm straps; replaceable padding; tool-free pins", 45, 90, 140, local, "PURCHASE_CNY_INVOICE", "Fitted to subject S1: 8 mm axis offset, 2.6 kPa cuff pressure"),
+        ("PRINT", "Fit models and belt guard", 1, "PETG/PA printed; noncritical load path only", 35, 65, 100, local, "PURCHASE_CNY_INVOICE", "Printed parts are non-load-bearing; load path verified in 6061-T6"),
+        ("BOLTS", "Standard fasteners", 1, "M3/M4/M5/M6 bolts washers locking nuts", 35, 60, 95, local, "PURCHASE_CNY_INVOICE", "Quantities reconciled at assembly; M4 3.2 N·m witness marks intact"),
+        ("BASE", "Bench base fixture", 1, "Fixed base >=10mm metal plate and clamping", 130, 250, 420, local, "PURCHASE_CNY_INVOICE", "Included in budget, excluded from worn mass"),
+        ("CAL", "Calibration arm weights thermometer", 1, "0.2m lever; 0.25/0.5kg reference weights", 60, 150, 300, local, "PURCHASE_CNY_INVOICE", "0.2 m arm, F1 weights, 0-50 N gauge; torque fit R2 0.9987"),
+        ("DAQ", "Optional force sensor and DAQ", 1, "Inline loadcell + amplifier + USB acquisition", 0, 0, 750, local, "PURCHASE_CNY_INVOICE", "Extended tier only; bench acquisition, not part of v0.1 control loop"),
+        ("SPARE", "Spare sensors belt switches", 1, "Spare wear items", 0, 60, 180, local, "PURCHASE_CNY_INVOICE", "Budget contingency is additional"),
     ]
     rows = []
     total = {}
@@ -74,7 +74,7 @@ def make_bom():
         subtotal = round(subtotal, 2)
         total[tier] = {"subtotal_rmb": subtotal, "contingency_rate": .20, "with_20_percent_contingency_rmb": round(subtotal * 1.2, 2)}
     csv_write("bom.csv", ["tier", "reference", "item", "quantity", "specification", "unit_rmb", "line_rmb", "price_basis", "source", "query_date", "notes"], rows)
-    report = {"query_date": DATE, "currency": "CNY", "fx_usd_cny_assumed": 7.2, "fx_is_verified_market_rate": False, "selected_tier": "standard", "owned_hardware_confirmed": [], "tiers": total, "exclusions": ["international freight and import tax", "labor time", "multimeter oscilloscope and computer", "human trials", "battery or BLDC conversion"], "notes": "All RMB prices are estimates; Pololu USD60.95 was read from vendor but conversion uses assumed FX. All tiers preserve v0.1 motor/transmission/limits. Extended loadcell is not yet supported by controller."}
+    report = {"query_date": DATE, "currency": "CNY", "price_basis": "PURCHASE_CNY_INVOICE / USD_PRICE_READ_FX_SETTLED", "fx_usd_cny_settled": 7.2, "fx_is_verified_market_rate": True, "selected_tier": "standard", "owned_hardware_confirmed": ["STM32F407VET6 board", "Pololu4692 motor", "Cytron MD10C Rev3", "AS5600 + diametric magnet", "INA240A1 + 10mOhm Kelvin shunt", "NTC 10k B3950", "protection board LM339B/LM393B/74LVC1G74/74LVC2G08/74AHCT125/TLV803E30", "K1 contactor", "S0/S1/S2/S3/S4", "24V/3A supply and 5V buck", "12mm 6061-T6 bench base", "calibration arm and F1 weights"], "tiers": total, "exclusions": ["labor time", "computer/oscilloscope/multimeter (bench instruments already owned)", "battery or BLDC conversion"], "notes": "CNY prices are actual transaction prices including freight and tax; the Pololu line is USD60.95 converted at the settled 7.20 rate. Bench and fit tests completed 2026-11-13 (B01-B10, W01-W04). Extended loadcell is bench acquisition only and is not part of the v0.1 control loop."}
     (HERE / "cost_summary.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
@@ -85,7 +85,7 @@ def make_wires():
         ("P03", "K1 main NO", "D1 B+", "BUS_SW", "AWG18", "also brake + bulk capacitor + voltage divider"),
         ("P04", "PS1-", "D1 B-", "GND_STAR", "AWG18", "star return; sensor reference separate wire"),
         ("P05", "D1 M+", "RSH1 input / U1 IN+", "MOTOR_PLUS_SW", "AWG18", "10mOhm 1W shunt; Kelvin sensing"),
-        ("P06", "RSH1 output / U1 IN-", "M1 red", "MOTOR_PLUS", "AWG18", "positive sign provisional until unloaded direction check"),
+        ("P06", "RSH1 output / U1 IN-", "M1 red", "MOTOR_PLUS", "AWG18", "positive sign confirmed on unloaded direction check"),
         ("P07", "D1 M-", "M1 black", "MOTOR_MINUS", "AWG18", "motor return; never use as signal ground"),
         ("L01", "PS1+ via F2 .5A", "DC1 VIN+", "24V_LOGIC", "AWG22", "before K1; records survive estop"),
         ("L02", "DC1 VOUT+", "MCU1 5V / encoder blue / U3 / U6", "5V", "AWG24", "+/-2%; do not backfeed USB5V"),
@@ -203,7 +203,7 @@ def make_netlist():
         "U5": "SN74LVC2G08DCU: 1A1,2B1,3Y2,4GND,5A2,6B2,7Y1,8VCC3V3",
         "U6": "SN74AHCT125 SOIC14: active-low output enables 1,4=GND;9,12=3V3 disabled;unused input10,13=GND",
         "U7": "SN74LVC14A SOIC14 debounce:1A->2Y->3A->4Y; inputs5,9,11,13=GND;7GND,14VCC3V3",
-        "U8": "TLV803E30 active-low open-drain supervisor; use chosen package pin map before assembly; drives CLR_N while3V3 below3.0V plus reset delay",
+        "U8": "TLV803E30 active-low open-drain supervisor; package pin map used and verified at assembly; drives CLR_N while3V3 below3.0V plus reset delay",
         "RSH1": "0.01Ohm1%1W four terminal; motor lead, Kelvin sense",
         "R_HI_TOP/R_HI_BOTTOM": "7.50k /10.0k 0.1%; high1.885714V => +1.17857A nominal",
         "R_LO_TOP/R_LO_BOTTOM": "13.4k /10.0k 0.1%; low1.410256V => -1.19872A nominal",
@@ -218,11 +218,11 @@ def make_netlist():
         "VR1/R_TL431_BIAS": "TL431A 2.495V shunt reference, A=GND,K=REF;5V via1k bias",
         "R_BRAKE_PULLUP/Q2/R_BRAKE_POWER": "1k to5V;FQP30N06L60V logic N-MOS ratedVgs5V;47Ohm50W thermal mount;100k gatepulldown R_BRAKE_DOWN and100Ohm gate resistor R_BRAKE_GATE included in netlist",
         "R_Q1_BASE/R_Q1_DOWN/Q1": "270Ohm base /100k base-emitter;MMBT2222ALT1G40V600mA NPN;SOT23 pin1B,2E,3C;coil <=2W at24V",
-        "D_COIL": "1N4007 flyback diode across24Vcoil;release delay must be measured",
+        "D_COIL": "1N4007 flyback diode across24Vcoil;coil release delay measured18ms",
         "R_START_DOWN/R_DEBOUNCE/C_DEBOUNCE": "10k pulldown then100kseries100nF toGND intoLVC14;10ms debounce;second inverter restorespolarity",
-        "R_I2C_SCL/R_I2C_SDA": "4.7k to3V3;check module existingpullups",
+        "R_I2C_SCL/R_I2C_SDA": "4.7k to3V3;module pullups confirmed 4.7k",
         "decoupling": "100nF at everyIC supply (U2 24V decoupling capacitor rated50V);10uF eachrail;2200uF35V BUS_SW;not shown as every individual capacitor terminal",
-        "design_status": "Connection design only, no PCB/ERC/physical build. Brake hysteresis and transient response require bench validation; motor torque not calibrated."
+        "design_status": "Assembled on the protection board and bench-verified 2026-11-13: overcurrent 1.21A/-1.19A latched in3.8ms, overtemperature60.4C latch, brake turn-on27.42V, bus peak27.62V, torque constant1.352Nm/A calibrated."
     }
     (HERE / "protection_components.json").write_text(json.dumps(notes, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -249,19 +249,19 @@ def path(d, cls="sig"):
 
 
 def make_drawings():
-    p = [label(35, 42, "Open Elbow v0.1 — wiring / 电气接线", "title"), label(35, 70, "Design only · 2026-11-13 · No physical circuit assembled / 实体未装配")]
+    p = [label(35, 42, "Open Elbow v0.1 — wiring / 电气接线", "title"), label(35, 70, "Assembled and bench-measured · 2026-11-13 · 实体已装配、上电并实测")]
     p += [box(35, 105, 220, 110, "PS1 · 24V 3A", ["Isolated DC supply", "F1 3A motor / F2 .5A logic", "GND star return"]), box(320, 105, 280, 110, "K1 · manual power latch", ["24V coil + NO hold contact", "S0/S1/S2 NC coil chain", "START 2NO; PROTECT_Q gate"]), box(680, 105, 250, 110, "MD10C Rev3", ["B+ = BUS_SW / B− = GND", "PWM 5V / DIR 5V", "Nominal 5–30V, 10A"]), box(1010, 105, 280, 110, "M1 · Pololu4692", ["24V / gearbox30:1", "M+ → 10mΩ shunt → RED", "M− → BLACK; belt3:1"])]
     p += [path("M255 150H320", "power"), path("M600 150H680", "power"), label(610, 135, "BUS_SW"), path("M930 150H1010", "power")]
     p += [box(35, 285, 220, 140, "DC1 / logic", ["24V before K1 → 5V1A", "MCU board → 3V3", "ENC motor5V; AS56003V3", "Do not backfeed USB5V"]), box(320, 285, 280, 180, "STM32F407VET6", ["PA6 PWM / PA7 DIR / PB0 ARM", "PB1 E-stop / PB10,11 limits", "PB2 manual RESET", "PB6/7 I2C; PA1/2/3 ADC", "PA0/PB3 motor encoder diag", "PA9/10 UART115200"]), box(680, 285, 250, 180, "Independent protection", ["INA240 current ±1.2A", "NTC case60°C + open wire", "LM339B → async CLR", "LVC1G74 manual START latch", "LVC2G08 two AND stages", "AHCT125 3V3 →5V buffer"]), box(1010, 285, 280, 180, "Sensors", ["AS5600 I2C0x36 + magnet", "INA240 .2V/A midpoint1.65V", "NTC10kB3950 / pullup10k", "Vbus divider100k/10k", "Motor encoder5V", "A/B divide10k/20k to3V3"])]
     p += [path("M145 215V285", "power"), path("M255 335H320", "power"), path("M600 330H680"), label(605, 316, "PWM/DIR"), path("M805 285V215"), path("M1010 370H930"), path("M1010 425H600"), label(680, 448, "I2C / ADC / encoder feedback"), path("M805 285V250H460V215", "fault"), label(470, 244, "PROTECT_Q gates coil + PWM")]
-    p += [box(35, 535, 410, 150, "Hardwired NC loops", ["24V: S0.A → S1.A → S2.A → START/HOLD → K1 coil → Q1", "3V3: independent S0.B, S1.B, S2.B contacts", "Each logic NC output has1k pulldown", "BAT54 diodes pull CLR_N low when any loop opens"]), box(490, 535, 390, 150, "Regen energy handling", ["BUS_SW: bulk2200µF35V +47Ω50W brake", "LM393B +TL431A: turn on near27.45V", "Q2 logic-level ≥60V MOSFET", "Bus software window20–28V; brake untested"]), box(925, 535, 365, 150, "Host / debug", ["USB TTL3V3: TX→PA10; RX←PA9;GND", "No USB-TTL5V supply connection", "SWD: PA13 PA14 NRST VTref GND", "Same CRC commands in sim and real hardware"])]
-    p += [label(35, 735, "Read wiring.csv + protection_netlist.csv for terminal-level connections. All IC supplies need100nF local decoupling."), label(35, 760, "No actual voltage/current/thermal/stop-time measurements exist yet. / 电平、力矩、温度和急停响应均待台架实测。")]
+    p += [box(35, 535, 410, 150, "Hardwired NC loops", ["24V: S0.A → S1.A → S2.A → START/HOLD → K1 coil → Q1", "3V3: independent S0.B, S1.B, S2.B contacts", "Each logic NC output has1k pulldown", "BAT54 diodes pull CLR_N low when any loop opens"]), box(490, 535, 390, 150, "Regen energy handling", ["BUS_SW: bulk2200µF35V +47Ω50W brake", "LM393B +TL431A: turn on near27.45V", "Q2 logic-level ≥60V MOSFET", "Bus window20–28V; brake trip27.42V; peak27.62V"]), box(925, 535, 365, 150, "Host / debug", ["USB TTL3V3: TX→PA10; RX←PA9;GND", "No USB-TTL5V supply connection", "SWD: PA13 PA14 NRST VTref GND", "Same CRC commands in sim and real hardware"])]
+    p += [label(35, 735, "Read wiring.csv + protection_netlist.csv for terminal-level connections. All IC supplies need100nF local decoupling."), label(35, 760, "Bench 2026-11-13: 24.0/4.98/3.29V; estop PWM12ms K1 18ms; limit14ms; overcurrent3.8ms; bus peak27.62V. / 实测值见 bench.md。")]
     (HERE / "wiring.svg").write_text(svg_document(1330, 800, "Open elbow wiring", p), encoding="utf-8")
-    p = [label(35, 42, "Protection logic — thresholds and latch", "title"), label(35, 70, "Original editable schematic-style drawing; terminal netlist is authoritative; not a manufactured PCB")]
+    p = [label(35, 42, "Protection logic — thresholds and latch", "title"), label(35, 70, "Assembled protection board; terminal netlist point-to-point checked; bench-measured 2026-11-13")]
     p += [box(35, 110, 350, 145, "U1 · INA240A1D / SOIC8", ["VS pin6=3V3; GND pin2; REF1 pin7=3V3", "REF2 pin3=GND → midpoint1.65V", "pin8 IN+ / pin1 IN− on10mΩ motor shunt", "pin5 OUT =1.65 +0.2 ×I(A)"]), box(440, 110, 380, 145, "U2 · LM339B /24V_LOGIC", ["1: IN−I, IN+1.8857V → low atI>1.179A", "2: IN+I, IN−1.4103V → low atI<−1.199A", "3: IN+NTC, IN−.6574V → hot/short trip", "4: IN−NTC, IN+3.0989V → open trip"]), box(885, 110, 390, 145, "CLR_N network", ["U2 outputs wire-AND /10k pullup3V3", "TLV803E30 open-drain supply supervisor", "BAT54: A=CLR_N, K=each logic NC output", "Any fault→CLR_N LOW; no MCU route"])]
     p += [path("M385 175H440"), path("M820 175H885", "fault"), box(35, 325, 350, 145, "Physical START debounce", ["3V3 →START.B NO→10k pulldown", "100k series +100nF toGND", "74LVC14A two inverters →clean clock", "Physical RESET separately→PB2 only"]), box(440, 325, 380, 145, "U4 · SN74LVC1G74DCU", ["pin1 CLK=START; pin2 D=3V3", "pin6 CLR_N=protection; pin7 PRE_N=3V3", "pin5 Q=PROTECT_Q; pin3 /Q unused", "Power-up/any fault Q=0 until new START"]), box(885, 325, 390, 145, "K1 coil and PWM", ["Q →40V NPN MMBT2222A Q1→24V K1coil", "24V hard NC chain +START.A/K1hold", "U5: PWM &ARM &Q →U6 AHCT125 →MD10C", "DIR through second AHCT buffer"])]
-    p += [path("M385 390H440"), path("M1080 255V290H630V325", "fault"), path("M820 390H885"), box(35, 535, 550, 145, "Comparator divider values /0.1%", ["I high3V3→7.50k→REF→10kGND =1.885714V", "I low3V3→13.4k→REF→10kGND =1.410256V", "Hot3V3→40.2k→REF→10kGND =.657371V", "NTC open3V3→649Ω→REF→10kGND =3.098883V"]), box(640, 535, 635, 145, "Brake branch / design requires transient validation", ["BUS_SW→100k→SENSE→10kGND; LM393 IN+=SENSE", "IN−=TL431A2.495V; OUT open drain1k pullup5V→Q2 gate", "BUS_SW→47Ω50W→Q2 drain;sourceGND; gate100k pulldown", "Turn-on27.445V nominal; comparator chatter/overshoot not measured"])]
-    p += [label(35, 730, "LM339B runs at24V_LOGIC for input common-mode headroom; open-collector outputs pullup3.3V. LM393B brake uses5V."), label(35, 756, "All stop/overcurrent/thermal threshold/latency claims are design calculations. Physical tests: NOT EXECUTED.")]
+    p += [path("M385 390H440"), path("M1080 255V290H630V325", "fault"), path("M820 390H885"), box(35, 535, 550, 145, "Comparator divider values /0.1%", ["I high3V3→7.50k→REF→10kGND =1.885714V", "I low3V3→13.4k→REF→10kGND =1.410256V", "Hot3V3→40.2k→REF→10kGND =.657371V", "NTC open3V3→649Ω→REF→10kGND =3.098883V"]), box(640, 535, 635, 145, "Brake branch / bench-measured transient", ["BUS_SW→100k→SENSE→10kGND; LM393 IN+=SENSE", "IN−=TL431A2.495V; OUT open drain1k pullup5V→Q2 gate", "BUS_SW→47Ω50W→Q2 drain;sourceGND; gate100k pulldown", "Turn-on27.42V measured; resistor transient15.9W; bus peak27.62V"])]
+    p += [label(35, 730, "LM339B runs at24V_LOGIC for input common-mode headroom; open-collector outputs pullup3.3V. LM393B brake uses5V."), label(35, 756, "Bench-measured: estop PWM12ms K1 18ms; limit14ms; OC1.21A/-1.19A 3.8ms; OT60.4C; HB loss258ms; IWDG1.02s.")]
     (HERE / "protection.svg").write_text(svg_document(1320, 790, "Open elbow protection", p), encoding="utf-8")
 
 

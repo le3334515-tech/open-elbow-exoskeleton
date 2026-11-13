@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "open-elbow-exoskeleton"
 version = "0.1.0"
-description = "Single elbow research exoskeleton: shared C controller, bench client and simulation"
+description = "Single elbow research exoskeleton: shared C controller, bench client and bench-record replay"
 readme = "README_EN.md"
 requires-python = ">=3.10"
 license = "Apache-2.0"

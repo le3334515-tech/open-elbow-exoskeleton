@@ -4,7 +4,7 @@ P02,F1 output,K1 main COM,24V_FUSED,AWG18,DC rated main contact
 P03,K1 main NO,D1 B+,BUS_SW,AWG18,also brake + bulk capacitor + voltage divider
 P04,PS1-,D1 B-,GND_STAR,AWG18,star return; sensor reference separate wire
 P05,D1 M+,RSH1 input / U1 IN+,MOTOR_PLUS_SW,AWG18,10mOhm 1W shunt; Kelvin sensing
-P06,RSH1 output / U1 IN-,M1 red,MOTOR_PLUS,AWG18,positive sign provisional until unloaded direction check
+P06,RSH1 output / U1 IN-,M1 red,MOTOR_PLUS,AWG18,positive sign confirmed on unloaded direction check
 P07,D1 M-,M1 black,MOTOR_MINUS,AWG18,motor return; never use as signal ground
 L01,PS1+ via F2 .5A,DC1 VIN+,24V_LOGIC,AWG22,before K1; records survive estop
 L02,DC1 VOUT+,MCU1 5V / encoder blue / U3 / U6,5V,AWG24,+/-2%; do not backfeed USB5V

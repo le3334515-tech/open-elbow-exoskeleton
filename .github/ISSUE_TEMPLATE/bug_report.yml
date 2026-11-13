@@ -1,4 +1,4 @@
-name: Bug report / 软件与仿真问题
+name: Bug report / 软件与台架问题
 description: Report a reproducible software, model, documentation, or interface defect.
 title: "[Bug] "
 labels: [bug]
@@ -9,12 +9,12 @@ body:
       label: Evidence provenance / 证据来源
       description: Identify what actually produced the observation.
       options:
-        - Native C controller with simulated plant
+        - Native C controller driven by bench replay
         - Python protocol or unit test
         - Analytical calculation or CAD/URDF
         - Physical bench measurement
         - Wearing measurement
-        - Documentation or unexecuted design review
+        - Documentation or design review without measurement
     validations:
       required: true
   - type: input
@@ -46,7 +46,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: unexecuted
+    id: not_covered
     attributes:
-      label: Checks not executed
-      description: State any missing physical, timing, thermal, or fit verification.
+      label: Checks not covered
+      description: State any physical, timing, thermal, or fit verification this report does not cover.

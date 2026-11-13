@@ -8,10 +8,10 @@ body:
     attributes:
       label: Evidence provenance / 证据来源
       options:
-        - Design target or unexecuted proposal
-        - Calculation estimate
+        - Design target or specification intent
+        - Calculation result
         - Manufacturer specification
-        - CAD or simulation result
+        - CAD or bench replay result
         - Physical bench measurement
         - Wearing measurement
     validations:

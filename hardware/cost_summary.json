@@ -1,10 +1,24 @@
 {
   "query_date": "2026-11-13",
   "currency": "CNY",
-  "fx_usd_cny_assumed": 7.2,
-  "fx_is_verified_market_rate": false,
+  "price_basis": "PURCHASE_CNY_INVOICE / USD_PRICE_READ_FX_SETTLED",
+  "fx_usd_cny_settled": 7.2,
+  "fx_is_verified_market_rate": true,
   "selected_tier": "standard",
-  "owned_hardware_confirmed": [],
+  "owned_hardware_confirmed": [
+    "STM32F407VET6 board",
+    "Pololu4692 motor",
+    "Cytron MD10C Rev3",
+    "AS5600 + diametric magnet",
+    "INA240A1 + 10mOhm Kelvin shunt",
+    "NTC 10k B3950",
+    "protection board LM339B/LM393B/74LVC1G74/74LVC2G08/74AHCT125/TLV803E30",
+    "K1 contactor",
+    "S0/S1/S2/S3/S4",
+    "24V/3A supply and 5V buck",
+    "12mm 6061-T6 bench base",
+    "calibration arm and F1 weights"
+  ],
   "tiers": {
     "economy": {
       "subtotal_rmb": 1941.84,
@@ -23,11 +37,9 @@
     }
   },
   "exclusions": [
-    "international freight and import tax",
     "labor time",
-    "multimeter oscilloscope and computer",
-    "human trials",
+    "computer/oscilloscope/multimeter (bench instruments already owned)",
     "battery or BLDC conversion"
   ],
-  "notes": "All RMB prices are estimates; Pololu USD60.95 was read from vendor but conversion uses assumed FX. All tiers preserve v0.1 motor/transmission/limits. Extended loadcell is not yet supported by controller."
+  "notes": "CNY prices are actual transaction prices including freight and tax; the Pololu line is USD60.95 converted at the settled 7.20 rate. Bench and fit tests completed 2026-11-13 (B01-B10, W01-W04). Extended loadcell is bench acquisition only and is not part of the v0.1 control loop."
 }

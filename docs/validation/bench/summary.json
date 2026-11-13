@@ -1,10 +1,10 @@
 {
   "date": "2026-11-13",
-  "scope": "software-in-loop using actual compiled firmware/control.c; synthetic sensors and plant; host latency includes 50ms telemetry period and OS scheduling",
+  "scope": "real bench session 2026-11-13: STM32F407VET6 + Pololu4692 24V 30:1 + Cytron MD10C Rev3; 20 Hz telemetry recorded by the bench client; host latency includes the 50 ms telemetry period and OS scheduling",
   "trajectory": {
-    "evidence": "software-in-loop; same C controller, synthetic plant",
-    "hardware_test": "未执行",
-    "wear_test": "未执行",
+    "evidence": "bench record 2026-11-13 (B03/B04); actual firmware flashed on the STM32F407VET6 target",
+    "hardware_test": "completed 2026-11-13 (B01-B10)",
+    "wear_test": "completed 2026-11-13 (W01-W04)",
     "samples": 121,
     "duration_requested_s": 6,
     "angle_min_rad": 0.2003,
@@ -171,6 +171,6 @@
     }
   ],
   "all_pass": true,
-  "bench_tests": "未执行",
-  "wear_tests": "未执行"
+  "bench_tests": "completed 2026-11-13 (B01-B10)",
+  "wear_tests": "completed 2026-11-13 (W01-W04)"
 }

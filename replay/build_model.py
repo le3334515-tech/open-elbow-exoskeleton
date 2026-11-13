@@ -57,7 +57,7 @@ def generate(destination):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("--output", default=str(ROOT / "simulation/elbow.urdf"))
+    p.add_argument("--output", default=str(ROOT / "replay/elbow.urdf"))
     args = p.parse_args()
     print(generate(args.output))
 

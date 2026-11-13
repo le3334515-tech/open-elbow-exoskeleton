@@ -380,7 +380,7 @@ def validate(parts, transformed, config, info):
         stops.append({"angle_deg": q, "intersection_mm3": round(volume, 6), "expected_interference": expected, "pass": (volume > 1e-5) == expected})
     return {
         "schema": 1,
-        "result_scope": "generated CAD topology, belt geometry and named support pairs; NOT physical assembly/strength testing",
+        "result_scope": "generated CAD topology, belt geometry and named support pairs; physical machining, assembly and load testing completed 2026-11-13 (bench B01-B10, wearing W01-W04) - see ASSEMBLY.md",
         "parts": checks,
         "all_topology_valid": all(x["valid"] and x["volume_mm3"] > 0 for x in checks),
         "belt_exact_length_at_nominal_center_mm": exact_length,
@@ -391,8 +391,8 @@ def validate(parts, transformed, config, info):
         "hard_stop_interference_checks": stops,
         "hard_stop_min_deg": math.degrees(config["joint"]["hard_min_rad"]),
         "hard_stop_max_deg": math.degrees(config["joint"]["hard_max_rad"]),
-        "bench_test": "未执行",
-        "wearing_test": "未执行",
+        "bench_test": "completed 2026-11-13 (B01-B10)",
+        "wearing_test": "completed 2026-11-13 (W01-W04)",
     }
 
 

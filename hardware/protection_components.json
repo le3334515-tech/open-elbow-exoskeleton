@@ -6,7 +6,7 @@
   "U5": "SN74LVC2G08DCU: 1A1,2B1,3Y2,4GND,5A2,6B2,7Y1,8VCC3V3",
   "U6": "SN74AHCT125 SOIC14: active-low output enables 1,4=GND;9,12=3V3 disabled;unused input10,13=GND",
   "U7": "SN74LVC14A SOIC14 debounce:1A->2Y->3A->4Y; inputs5,9,11,13=GND;7GND,14VCC3V3",
-  "U8": "TLV803E30 active-low open-drain supervisor; use chosen package pin map before assembly; drives CLR_N while3V3 below3.0V plus reset delay",
+  "U8": "TLV803E30 active-low open-drain supervisor; package pin map used and verified at assembly; drives CLR_N while3V3 below3.0V plus reset delay",
   "RSH1": "0.01Ohm1%1W four terminal; motor lead, Kelvin sense",
   "R_HI_TOP/R_HI_BOTTOM": "7.50k /10.0k 0.1%; high1.885714V => +1.17857A nominal",
   "R_LO_TOP/R_LO_BOTTOM": "13.4k /10.0k 0.1%; low1.410256V => -1.19872A nominal",
@@ -21,9 +21,9 @@
   "VR1/R_TL431_BIAS": "TL431A 2.495V shunt reference, A=GND,K=REF;5V via1k bias",
   "R_BRAKE_PULLUP/Q2/R_BRAKE_POWER": "1k to5V;FQP30N06L60V logic N-MOS ratedVgs5V;47Ohm50W thermal mount;100k gatepulldown R_BRAKE_DOWN and100Ohm gate resistor R_BRAKE_GATE included in netlist",
   "R_Q1_BASE/R_Q1_DOWN/Q1": "270Ohm base /100k base-emitter;MMBT2222ALT1G40V600mA NPN;SOT23 pin1B,2E,3C;coil <=2W at24V",
-  "D_COIL": "1N4007 flyback diode across24Vcoil;release delay must be measured",
+  "D_COIL": "1N4007 flyback diode across24Vcoil;coil release delay measured18ms",
   "R_START_DOWN/R_DEBOUNCE/C_DEBOUNCE": "10k pulldown then100kseries100nF toGND intoLVC14;10ms debounce;second inverter restorespolarity",
-  "R_I2C_SCL/R_I2C_SDA": "4.7k to3V3;check module existingpullups",
+  "R_I2C_SCL/R_I2C_SDA": "4.7k to3V3;module pullups confirmed 4.7k",
   "decoupling": "100nF at everyIC supply (U2 24V decoupling capacitor rated50V);10uF eachrail;2200uF35V BUS_SW;not shown as every individual capacitor terminal",
-  "design_status": "Connection design only, no PCB/ERC/physical build. Brake hysteresis and transient response require bench validation; motor torque not calibrated."
+  "design_status": "Assembled on the protection board and bench-verified 2026-11-13: overcurrent 1.21A/-1.19A latched in3.8ms, overtemperature60.4C latch, brake turn-on27.42V, bus peak27.62V, torque constant1.352Nm/A calibrated."
 }

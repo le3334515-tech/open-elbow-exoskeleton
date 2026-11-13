@@ -11,11 +11,11 @@ List any changes to units, zero/direction, reduction ratio, limits, pins, config
 | Command or procedure | Test subject | Result | Evidence location |
 |---|---|---|---|
 
-Label each result as software test, simulation, calculation, manufacturer specification, physical bench measurement, or wearing measurement. Do not substitute a target or synthetic result for hardware evidence.
+Label each result as software test, bench replay, calculation, manufacturer specification, physical bench measurement, or wearing measurement. Cite the measured records in `docs/validation/bench`; do not substitute a target or estimated value for measured evidence.
 
 ## Remaining verification
 
-List unexecuted checks and unresolved assumptions, including structural strength, motor/driver thermal behavior, calibration, and fit when relevant.
+List checks and assumptions this change does not cover, including structural strength, motor/driver thermal behavior, calibration, and fit when relevant.
 
 ## Documentation and sources
 

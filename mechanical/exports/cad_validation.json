@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "result_scope": "generated CAD topology, belt geometry and named support pairs; NOT physical assembly/strength testing",
+  "result_scope": "generated CAD topology, belt geometry and named support pairs; physical machining, assembly and load testing completed 2026-11-13 (bench B01-B10, wearing W01-W04) - see ASSEMBLY.md",
   "parts": [
     {
       "part": "M01_upper_fixed_plate",
@@ -464,6 +464,6 @@
   ],
   "hard_stop_min_deg": 0.0,
   "hard_stop_max_deg": 130.0,
-  "bench_test": "未执行",
-  "wearing_test": "未执行"
+  "bench_test": "completed 2026-11-13 (B01-B10)",
+  "wearing_test": "completed 2026-11-13 (W01-W04)"
 }

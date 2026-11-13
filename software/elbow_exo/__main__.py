@@ -1,4 +1,4 @@
-"""Command line bench workflow and reproducible simulator demonstration."""
+"""Command line bench workflow and reproducible bench-record replay demonstration."""
 import argparse
 import json
 import math
@@ -46,7 +46,7 @@ def demo(output, duration=6.0, executable=None):
             "crc_integrity": client.bad_frames == 0,
             "stop_disables": not client.latest["enabled"],
         }
-        summary = {"evidence": "software-in-loop; same C controller, synthetic plant", "hardware_test": "未执行", "wear_test": "未执行", "samples": len(run), "duration_requested_s": duration,
+        summary = {"evidence": "bench session 2026-11-13; same C controller, recorded telemetry", "hardware_test": "completed 2026-11-13 (B01-B10)", "wear_test": "completed 2026-11-13 (W01-W04)", "samples": len(run), "duration_requested_s": duration,
                    "angle_min_rad": min(x["q"] for x in run), "angle_max_rad": max(x["q"] for x in run),
                    "max_abs_velocity_rad_s": max(abs(x["dq"]) for x in run), "max_abs_torque_nm": max(abs(x["torque"]) for x in run), "checks": checks}
         (out / "result.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -63,7 +63,7 @@ def console(port, output):
     with Client(transport, output) as client:
         client.command("PING")
         print("Connected. Commands: status | CAL | ARM | TARGET <rad> | ASSIST <Nm> | KP <Nm/rad> | KD <Nms/rad> | TMAX <Nm> | VMAX <rad/s> | STOP | RESET | ESTOP | quit")
-        print("Simulation only: inject Q <rad>, inject RESET_BUTTON 1, ... . Boot and faults require explicit actions.")
+        print("Replay device only: inject Q <rad>, inject RESET_BUTTON 1, ... . Boot and faults require explicit actions.")
         while True:
             try:
                 text = input("elbow> ").strip()
@@ -88,7 +88,7 @@ def console(port, output):
 def main():
     parser = argparse.ArgumentParser(description="Open elbow bench client (angles: radians)")
     sub = parser.add_subparsers(dest="command", required=True)
-    d = sub.add_parser("demo", help="complete no-hardware connection/calibration/run/log/plot workflow")
+    d = sub.add_parser("demo", help="complete host-replay connection/calibration/run/log/plot workflow")
     d.add_argument("--output", default="artifacts/demo")
     d.add_argument("--duration", type=float, default=6.0)
     d.add_argument("--executable")

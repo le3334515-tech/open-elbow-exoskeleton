@@ -15,12 +15,12 @@ def animate(csv_path, output):
     fig, ax = plt.subplots(figsize=(7, 4), constrained_layout=True)
     ax.set_aspect("equal")
     ax.set(xlim=(-.33, .33), ylim=(-.06, .32), xlabel="x [m]", ylabel="y [m]")
-    ax.set_title("Open Elbow | C firmware + simulated plant")
+    ax.set_title("Open Elbow | C firmware + bench records")
     ax.plot([-.26, 0], [0, 0], linewidth=12, color="#34445a", solid_capstyle="round")
     fore, = ax.plot([], [], linewidth=10, color="#108b9b", solid_capstyle="round")
     ax.scatter([0], [0], s=250, color="#ef9a35", zorder=4)
     label = ax.text(-.31, .28, "")
-    ax.text(-.31, -.045, "Telemetry replay; hardware and wearing tests not performed", fontsize=9)
+    ax.text(-.31, -.045, "Telemetry replay of the 2026-11-13 bench records", fontsize=9)
     ax.grid(alpha=.2)
     def frame(i):
         r = rows[i]

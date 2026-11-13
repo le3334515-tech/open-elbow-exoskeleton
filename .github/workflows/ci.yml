@@ -28,12 +28,12 @@ jobs:
         run: python firmware/build.py --target stm32
       - name: Test software, wire protocol and model
         run: python -m pytest tests/test_firmware.py tests/test_protocol.py tests/test_model.py tests/test_integration.py -q --junitxml=artifacts/tests.xml
-      - name: Generate model and run shared-controller simulation
+      - name: Generate model and run shared-controller bench replay
         run: |
-          python simulation/build_model.py
-          python simulation/validate.py --output artifacts/simulation
+          python replay/build_model.py
+          python replay/validate.py --output artifacts/replay
           python tools/generate_config.py --check
-          git diff --exit-code -- simulation/elbow.urdf firmware/include/config_generated.h
+          git diff --exit-code -- replay/elbow.urdf firmware/include/config_generated.h
       - uses: actions/upload-artifact@v4
         if: always()
         with:

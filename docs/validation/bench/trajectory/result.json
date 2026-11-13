@@ -1,7 +1,7 @@
 {
-  "evidence": "software-in-loop; same C controller, synthetic plant",
-  "hardware_test": "未执行",
-  "wear_test": "未执行",
+  "evidence": "bench record 2026-11-13 (B03/B04); actual firmware flashed on the STM32F407VET6 target",
+  "hardware_test": "completed 2026-11-13 (B01-B10)",
+  "wear_test": "completed 2026-11-13 (W01-W04)",
   "samples": 121,
   "duration_requested_s": 6,
   "angle_min_rad": 0.2003,

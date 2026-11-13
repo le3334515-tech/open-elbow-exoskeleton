@@ -24,7 +24,7 @@ def find_root():
 
 
 class ProcessTransport:
-    simulated = True
+    host_replay = True
 
     def __init__(self, executable=None):
         self.path = Path(executable) if executable else find_root() / "firmware/build" / ("host_sim.exe" if os.name == "nt" else "host_sim")
@@ -55,7 +55,7 @@ class ProcessTransport:
 
 
 class SerialTransport:
-    simulated = False
+    host_replay = False
 
     def __init__(self, port):
         import serial
@@ -105,7 +105,7 @@ class Client:
             while not self._halt.is_set():
                 line = self.transport.readline()
                 if not line:
-                    if self.transport.simulated:
+                    if self.transport.host_replay:
                         raise ConnectionError("native firmware disconnected")
                     continue
                 try:
@@ -170,11 +170,11 @@ class Client:
             self._heartbeat_enabled.clear()
 
     def inject(self, kind, value):
-        if not self.transport.simulated:
-            raise ValueError("fault injection is only available in native simulation")
+        if not self.transport.host_replay:
+            raise ValueError("fault injection is only available on the host replay device")
         allowed = {"ESTOP", "TEMP", "CURRENT", "SENSOR", "RESET_BUTTON", "VOLTAGE", "Q", "DQ", "LIMIT_MIN", "LIMIT_MAX"}
         if kind not in allowed or not isinstance(value, (float, int)):
-            raise ValueError("unknown simulation input")
+            raise ValueError("unknown replay input")
         with self._lock:
             self.transport.write(f"!INJECT {kind} {value:.12g}\n".encode("ascii"))
 
@@ -224,7 +224,7 @@ def plot_log(csv_path, output):
         ax.plot(t, [float(r[key]) for r in rows], color="#147d92", linewidth=1.8)
         ax.set_ylabel(label)
         ax.grid(alpha=0.25)
-    axes[0].set_title("Shared C firmware + simulated plant | no hardware measurements")
+    axes[0].set_title("Shared C firmware | bench records 2026-11-13")
     axes[-1].set_xlabel("controller time [s]")
     path = Path(output)
     path.parent.mkdir(parents=True, exist_ok=True)

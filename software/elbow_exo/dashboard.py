@@ -83,11 +83,11 @@ def run(port="sim"):
     ttk.Entry(controls, textvariable=value_var, width=14).grid(row=1, column=1)
     ttk.Button(controls, text="Apply SI value", command=command).grid(row=1, column=2)
     ttk.Label(controls, text="rad, Nm, Nm/rad, Nm·s/rad, Nm, rad/s").grid(row=1, column=3, columnspan=2)
-    # Simulation fixture operations are explicitly separated from physical commands.
+    # Replay fixture operations are explicitly separated from physical commands.
     def fixture():
-        if client and client.transport.simulated:
+        if client and client.transport.host_replay:
             client.inject("Q", 0.2245329252)
-    ttk.Button(controls, text="SIM only: move zero fixture to 0.225 rad", command=fixture).grid(row=2, column=0, columnspan=3, sticky="w")
+    ttk.Button(controls, text="Host replay only: move zero fixture to 0.225 rad", command=fixture).grid(row=2, column=0, columnspan=3, sticky="w")
     ttk.Label(root, textvariable=status, font=("Consolas", 11), padding=12).pack(fill="x")
     fig = Figure(figsize=(8, 3.8), dpi=100)
     axis = fig.add_subplot(111)
