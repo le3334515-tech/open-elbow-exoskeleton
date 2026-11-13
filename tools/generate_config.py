@@ -24,7 +24,9 @@ FIELDS = {
 
 
 def render():
-    raw = (ROOT / "config/robot.json").read_bytes()
+    # Hash normalized UTF-8 so Windows checkout line endings cannot change
+    # generated firmware metadata or CI results on Linux.
+    raw = (ROOT / "config/robot.json").read_text(encoding="utf-8").replace("\r\n", "\n").encode("utf-8")
     data = json.loads(raw)
     assert abs(data["drive"]["gear_ratio"] * data["drive"]["belt_ratio"] - data["drive"]["total_ratio"]) < 1e-8
     assert data["joint"]["hard_min_rad"] < data["joint"]["soft_min_rad"] < data["joint"]["soft_max_rad"] < data["joint"]["hard_max_rad"]
