@@ -4,7 +4,7 @@
 typedef struct {char text[512];unsigned used;} Builder;
 static void add(Builder *b,const char *s){while(*s&&b->used<sizeof(b->text)-1)b->text[b->used++]=*s++;b->text[b->used]=0;}
 static void uint_add(Builder *b,uint32_t n){char digits[11];unsigned i=0;do{digits[i++]=(char)('0'+n%10);n/=10;}while(n&&i<11);while(i){char s[2]={digits[--i],0};add(b,s);}}
-static void float_add(Builder *b,float v){if(v<0){add(b,"-");v=-v;}if(!(v>=0&&v<1000000)){add(b,"null");return;}uint32_t n=(uint32_t)(v*100000.0f+0.5f);uint_add(b,n/100000);add(b,".");uint32_t part=n%100000;for(uint32_t base=10000;base;base/=10){char s[2]={(char)('0'+part/base),0};add(b,s);part%=base;}}
+static void float_add(Builder *b,float v){if(v<0){add(b,"-");v=-v;}if(!(v>=0&&v<40000)){add(b,"null");return;}uint32_t n=(uint32_t)(v*100000.0f+0.5f);uint_add(b,n/100000);add(b,".");uint32_t part=n%100000;for(uint32_t base=10000;base;base/=10){char s[2]={(char)('0'+part/base),0};add(b,s);part%=base;}}
 uint16_t protocol_crc(const char *data,size_t length){uint16_t crc=0xffff;for(size_t i=0;i<length;i++){crc^=(uint16_t)(unsigned char)data[i]<<8;for(unsigned j=0;j<8;j++)crc=(uint16_t)((crc&0x8000)?(crc<<1)^0x1021:crc<<1);}return crc;}
 void protocol_frame(const char *payload,Emit emit,void *context){static const char hex[]="0123456789ABCDEF";size_t length=strlen(payload);uint16_t crc=protocol_crc(payload,length);char tail[7]={'*',hex[(crc>>12)&15],hex[(crc>>8)&15],hex[(crc>>4)&15],hex[crc&15],'\n',0};emit(payload,length,context);emit(tail,6,context);}
 static void error(const char *code,Emit emit,void *ctx){Builder b={{0},0};add(&b,"{\"type\":\"error\",\"code\":\"");add(&b,code);add(&b,"\"}");protocol_frame(b.text,emit,ctx);}

@@ -1,0 +1,33 @@
+{
+  "query_date": "2026-11-13",
+  "currency": "CNY",
+  "fx_usd_cny_assumed": 7.2,
+  "fx_is_verified_market_rate": false,
+  "selected_tier": "standard",
+  "owned_hardware_confirmed": [],
+  "tiers": {
+    "economy": {
+      "subtotal_rmb": 1941.84,
+      "contingency_rate": 0.2,
+      "with_20_percent_contingency_rmb": 2330.21
+    },
+    "standard": {
+      "subtotal_rmb": 3111.84,
+      "contingency_rate": 0.2,
+      "with_20_percent_contingency_rmb": 3734.21
+    },
+    "extended": {
+      "subtotal_rmb": 5523.84,
+      "contingency_rate": 0.2,
+      "with_20_percent_contingency_rmb": 6628.61
+    }
+  },
+  "exclusions": [
+    "international freight and import tax",
+    "labor time",
+    "multimeter oscilloscope and computer",
+    "human trials",
+    "battery or BLDC conversion"
+  ],
+  "notes": "All RMB prices are estimates; Pololu USD60.95 was read from vendor but conversion uses assumed FX. All tiers preserve v0.1 motor/transmission/limits. Extended loadcell is not yet supported by controller."
+}

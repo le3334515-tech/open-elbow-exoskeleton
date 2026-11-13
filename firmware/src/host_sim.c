@@ -1,4 +1,7 @@
 /* SPDX-License-Identifier: Apache-2.0 */
+#ifndef _WIN32
+#define _POSIX_C_SOURCE 200809L
+#endif
 /* This native adapter runs the identical control.c/protocol.c used on STM32. */
 #include "control.h"
 #include "protocol.h"

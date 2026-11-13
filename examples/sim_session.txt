@@ -1,0 +1,23 @@
+# Commands to enter after `python -m elbow_exo console --port sim`.
+# These are human console inputs; the client supplies sequence numbers and CRC.
+status
+CAL
+# Wait at least 0.2 seconds before the next line.
+inject Q 0.225
+ARM
+TARGET 0.5
+status
+STOP
+KP 2
+KD 0.35
+TMAX 0.3
+VMAX 0.4
+ARM
+ASSIST 0.1
+ESTOP
+status
+inject RESET_BUTTON 1
+# Wait at least one telemetry update (0.05 s) before RESET.
+RESET
+quit
+

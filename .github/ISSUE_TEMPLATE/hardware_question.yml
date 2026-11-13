@@ -1,0 +1,51 @@
+name: Hardware question / 机械与电气问题
+description: Ask about a specific assembly, interface, component, or engineering assumption.
+title: "[Hardware] "
+labels: [hardware]
+body:
+  - type: dropdown
+    id: provenance
+    attributes:
+      label: Evidence provenance / 证据来源
+      options:
+        - Design target or unexecuted proposal
+        - Calculation estimate
+        - Manufacturer specification
+        - CAD or simulation result
+        - Physical bench measurement
+        - Wearing measurement
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Project revision and component identities
+      description: Include commit/tag, exact motor/driver/board revisions and changed parts.
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Concrete question
+      description: Identify the drawing, pin, load case, dimension, or behavior involved, with units.
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Setup and configuration
+      description: Supply, wiring, reduction ratio, fixture, sensor installation, limits, and relevant configuration changes.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting source or measurement record
+      description: Link vendor data or provide raw readings, instruments, calibration, and measurement conditions; state when no physical test was executed.
+    validations:
+      required: true
+  - type: textarea
+    id: assumptions
+    attributes:
+      label: Assumptions and missing verification
+      description: Keep calculated/model values separate from measured structural, thermal, and fit results.

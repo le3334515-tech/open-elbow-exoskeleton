@@ -7,13 +7,13 @@
 | PA6 | TIM3_CH1输出 | U5 SN74LVC2G08 pin1 | 20kHz，3.3V，外10k下拉 |
 | PB0 | 输出，ARM_GATE | U5 pin2 | 高才允许PWM；外10k下拉 |
 | U5 pin7 | 一级AND输出 | U5 pin5 | PWM AND ARM_GATE |
-| U4 pin5 | 非反相Q输出 | U5 pin6、Q1栅极 | PROTECT_Q；异步故障清零 |
+| U4 pin5 | 非反相Q输出 | U5 pin6、Q1基极 | PROTECT_Q；异步故障清零 |
 | U5 pin3 | 二级AND输出 | U6 SN74AHCT125 pin2 | PWM AND ARM_GATE AND PROTECT_Q |
 | U6 pin3 | 5V输出 | MD10C PWM | 3.3→5V电平缓冲，10k下拉 |
 | PA7 | DIR输出 | U6 pin5；U6 pin6→MD10C DIR | 3.3→5V缓冲，10k下拉 |
-| PB1 | 输入 | S0第二组NC下游，10k下拉 | 急停释放=3.3V；断线/按下=0 |
-| PB10 | 输入 | S1第二组NC下游，10k下拉 | 伸展限位未动作=高 |
-| PB11 | 输入 | S2第二组NC下游，10k下拉 | 屈曲限位未动作=高 |
+| PB1 | 输入 | S0第二组NC下游，1k下拉 | 急停释放=3.3V；断线/按下=0 |
+| PB10 | 输入 | S1第二组NC下游，1k下拉 | 伸展限位未动作=高 |
+| PB11 | 输入 | S2第二组NC下游，1k下拉 | 屈曲限位未动作=高 |
 | PB2 | 输入 | S4 RESET NO→3.3V，10k下拉 | 按住=高；实体复位条件 |
 | PB6 | I2C1 SCL | AS5600 SCL | 4.7k上拉3.3V，短线，100kHz |
 | PB7 | I2C1 SDA | AS5600 SDA | 4.7k上拉3.3V；地址0x36 |
@@ -21,7 +21,7 @@
 | PA2 | ADC1_IN2 | 10k/B3950 NTC分压节点 | 3.3V→10k→节点→NTC→GND |
 | PA3 | ADC1_IN3 | BUS_SW→100k→节点→10k→GND | Vbus=11×Vadc，100nF滤波 |
 | PA0 | TIM2_CH1输入 | 电机编码器A黄线，经10k串/20k地分压 | 5V→3.33V标称 |
-| PA5 | TIM2_CH2输入 | 电机编码器B白线，同上 | 使用A/B双边沿64CPR/电机转 |
+| PB3 | TIM2_CH2输入 | 电机编码器B白线，同上 | 使用A/B双边沿64CPR/电机转 |
 | PA9 | USART1_TX | 3.3V USB-TTL RX | 115200 8N1，交叉接线 |
 | PA10 | USART1_RX | 3.3V USB-TTL TX | 不接5V TTL，不接RS232电平 |
 | PA13 / PA14 | SWDIO / SWCLK | ST-Link/CMSIS-DAP | 3.3V电平；另接GND和VTref |
@@ -38,7 +38,7 @@
 | MD10C Rev3 | 标称5–30V、10A，PWM/DIR，20kHz | 24V/0.8A工作区低于标称极限；官方GitHub库确认PWM/DIR。产品/手册页访问失败，电压、电流和最大PWM频率尚需到货Rev3手册复核；输出用5V AHCT缓冲消除3.3V输入门限依赖 |
 | AS5600 | 3.3V，I2C0x36，12bit绝对角 | 选裸芯片3.3V模式或确认模块上拉为3.3V；VDD5V与VDD3V3按厂家3.3V模式连接，不能把带5V上拉的未知模块直接接MCU。官网PDF旧链失效，需到货模块图确认 |
 | INA240A1D | 3.3V供电；20V/V；10mΩ；±1.2A保护阈值 | TI PDF已读取：供电2.7–5.5V，共模−4–80V。连接在MD10C M+与电机之间，IN+向驱动、IN−向电机；REF1=3.3V、REF2=0实现半电源参考 |
-| LM339B | 5V供电；输入0.66–3.10V；输出上拉3.3V | TI PDF已读取；用5V供电保留输入共模裕量，不以3.3V供电比较1.89/3.10V |
+| LM339B | 接触器前24V_LOGIC供电；输入0.66–3.30V；开集电极输出上拉3.3V | TI PDF已读取，2–36V供电；24V保证NTC开路3.3V输入的最坏共模裕量；不能直接改为3.3V或按5V典型共模值判断 |
 | SN74LVC1G74 / 2G08 | 3.3V锁存/AND | TI PDF已读取；74LVC1G74 pin5为非反相Q，pin3为反相Q，不能接反 |
 | SN74AHCT125 | 5V供电；TTL输入2.0V高阈值 | 选AHCT而非HC系列；输出5V到MD10C，不进入MCU。采购前复核具体订货号和脚位 |
 | DC/DC | 24V→5V/1A，输入额定≥36V | 5V逻辑、电机编码器、比较器与缓冲；MCU开发板自带3.3V稳压 |

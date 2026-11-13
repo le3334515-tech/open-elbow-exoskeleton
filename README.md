@@ -4,7 +4,7 @@
 
 面向科研、教学和控制算法研究的模块化单肘关节外骨骼开源工程。首版交付参数化机械设计、STM32F407 C 固件、Python 台架上位机及使用同一控制核心的单关节仿真。
 
-**当前阶段：软件与仿真原型。没有实体台架或佩戴实测。** 0.5 Nm 连续、1 Nm/1 s 短时助力、1 rad/s 速度和1.5 kg穿戴质量均为设计目标；电流到力矩关系是计算估算。按“软件仿真 → 单关节台架 → 佩戴验证”推进。
+**当前交付：首版完整工程版。机械、电气、固件、上位机与仿真已交付；实体台架和佩戴测试未执行。** 0.5 Nm 连续、1 Nm/1 s 短时助力、1 rad/s 速度和1.5 kg穿戴质量均为设计目标；电流到力矩关系是计算估算。按“软件仿真 → 单关节台架 → 佩戴验证”推进。
 
 ![实际固件仿真轨迹](docs/validation/simulation/trajectory/trajectory.png)
 
@@ -89,7 +89,7 @@ python -m pytest -q
 python simulation/build_model.py
 python simulation/validate.py --output artifacts/simulation
 python -m pip install '.[cad]'
-python mechanical/build_cad.py
+python mechanical/source/build_cad.py
 ```
 
 固件输出`firmware/build/stm32/open_elbow.elf`和`.bin`。SWD烧录及具体接线见固件和硬件文档。未假定本机已有任何控制板、电机或电源。ROS 2 仅是后续可选接口；首版运行不需要ROS。

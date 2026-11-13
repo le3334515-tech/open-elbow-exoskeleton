@@ -1,0 +1,42 @@
+wire,from,to,net,wire_spec,notes
+P01,PS1+,F1 input,24V,AWG18,main power fuse 3A slow
+P02,F1 output,K1 main COM,24V_FUSED,AWG18,DC rated main contact
+P03,K1 main NO,D1 B+,BUS_SW,AWG18,also brake + bulk capacitor + voltage divider
+P04,PS1-,D1 B-,GND_STAR,AWG18,star return; sensor reference separate wire
+P05,D1 M+,RSH1 input / U1 IN+,MOTOR_PLUS_SW,AWG18,10mOhm 1W shunt; Kelvin sensing
+P06,RSH1 output / U1 IN-,M1 red,MOTOR_PLUS,AWG18,positive sign provisional until unloaded direction check
+P07,D1 M-,M1 black,MOTOR_MINUS,AWG18,motor return; never use as signal ground
+L01,PS1+ via F2 .5A,DC1 VIN+,24V_LOGIC,AWG22,before K1; records survive estop
+L02,DC1 VOUT+,MCU1 5V / encoder blue / U3 / U6,5V,AWG24,+/-2%; do not backfeed USB5V
+L03,MCU1 3V3,ENC1 VDD / U1 VS / U4 / U5,3V3,AWG24,AS5600 bare chip VDD5 andVDD3 tied for3.3V mode per module diagram
+L04,GND_STAR,MCU1 GND / sensor GND / D1 GND / USB TTL GND,GND,AWG24,separate signal return from motor loop
+C01,MCU PA6,U5 pin1,PWM_3V3,AWG24,20kHz; 10k pulldown
+C02,MCU PB0,U5 pin2,ARM_GATE,AWG24,10k pulldown
+C03,U5 pin7,U5 pin5,PWM_ARM,PCB,stage1 AND
+C04,U4 pin5,U5 pin6 / Q1 base,PROTECT_Q,PCB,pin5 noninverting Q; 100k base pulldown
+C05,U5 pin3,U6 pin2,PWM_GATED,PCB,stage2 AND; 10k pulldown
+C06,U6 pin3,D1 PWM,PWM_5V,AWG24,10k pulldown at driver
+C07,MCU PA7,U6 pin5,DIR_3V3,AWG24,10k pulldown
+C08,U6 pin6,D1 DIR,DIR_5V,AWG24,5V AHCT buffer
+E01,24V_FUSED,S0.A NC -> S1.A NC -> S2.A NC,COIL_CHAIN,AWG22,hard wired stop chain; separate from3.3V contacts
+E02,COIL_CHAIN output,S3.A START NO parallel K1 auxNO,HOLD_FEED,AWG22,no auto restart after K1 released
+E03,START/HOLD output,K1 coil A1,COIL_PLUS,AWG22,coil flyback diode cathode here
+E04,K1 coil A2,Q1 collector,COIL_LOW,AWG22,coil diode anode here; Q1 emitterGND
+E05,3V3,3V3 independently to S0.B / S1.B / S2.B,LOGIC_CHAIN,AWG24,branch PB1/PB10/PB11 at each switch output using independent3V3 feeds; see netlist
+E06,S0.B output,MCU PB1 + D_S0 cathode,ESTOP_OK,AWG24,1k pulldown; diode pullsCLR low onopen
+E07,S1.B output,MCU PB10 + D_S1 cathode,LIMIT_MIN_OK,AWG24,1k pulldown
+E08,S2.B output,MCU PB11 + D_S2 cathode,LIMIT_MAX_OK,AWG24,1k pulldown
+E09,3V3 via S3.B START NO,RC Schmitt debounce -> U4 CLK pin1,START_CLK,AWG24,"D=3V3, PRE_N=3V3; outputs cannot be commanded by MCU"
+E10,3V3 via S4 RESET NO,MCU PB2,MANUAL_RESET,AWG24,10k pulldown; only feedback not hardware start
+A01,ENC1 SDA,MCU PB7,I2C_SDA,AWG26,4.7k pullup3V3
+A02,ENC1 SCL,MCU PB6,I2C_SCL,AWG26,4.7k pullup3V3
+A03,U1 OUT pin5,330Ohm -> MCU PA1;100nF toGND,CURRENT_ADC,shielded,output signal used by comparator before RC
+A04,NTC node,MCU PA2 and U2 temp comparators,TEMP_ADC,twisted pair,10k pullup3V3;NTC bottomGND
+A05,BUS_SW divider100k/10k node,MCU PA3,BUS_ADC,AWG26,100nF GND; analog maximum36.3V
+A06,M1 yellow encoderA,10k top /20k bottom -> MCU PA0,ENC_A_3V3,twisted pair,5V encoder supply; not direct5V MCU
+A07,M1 white encoderB,10k top /20k bottom -> MCU PB3,ENC_B_3V3,twisted pair,5V encoder supply
+A08,M1 green,GND,ENC_GND,AWG26,separate from motorblack
+U01,USB TTL TX3V3,MCU PA10,UART_RX,AWG26,1152008N1
+U02,MCU PA9,USB TTL RX,UART_TX,AWG26,1152008N1
+U03,SWD probe SWDIO/SWCLK/NRST/VTref/GND,PA13/PA14/NRST/3V3/GND,SWD,ribbon,probeVTref senses board3.3V; no dual supply
+B01,BUS_SW,47Ohm50W -> Q2 drain,BRAKE,AWG18,Q2 sourceGND; thermally mount resistor

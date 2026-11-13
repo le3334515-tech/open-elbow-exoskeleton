@@ -6,8 +6,8 @@ This is a mixed-license repository. There is no single license covering every fi
 
 | Material | License |
 |---|---|
-| firmware/** (C, headers, build scripts), software/**, simulation/** executable code and URDF, tests/**, tools/**, .github/workflows/**, pyproject.toml | [Apache-2.0](LICENSES/Apache-2.0.txt) |
-| Original mechanical design definitions including mechanical/build_cad.py, mechanical/exports/**, mechanical/drawings/** and original hardware wiring/netlists | [CERN-OHL-W-2.0](LICENSES/CERN-OHL-W-2.0.txt) |
+| firmware/** (C, headers, build scripts), software/**, simulation/** executable code and URDF, tests/**, tools/**, .github/workflows/**, hardware/generate.py, pyproject.toml | [Apache-2.0](LICENSES/Apache-2.0.txt) |
+| Original mechanical design definitions including mechanical/source/build_cad.py, mechanical/exports/**, mechanical/drawings/** and original hardware wiring/netlists | [CERN-OHL-W-2.0](LICENSES/CERN-OHL-W-2.0.txt) |
 | README*.md, docs/**, original explanatory diagrams, contributor/issue/assembly/BOM/source notes, all other original Markdown | [CC-BY-4.0](LICENSES/CC-BY-4.0.txt) |
 | Canonical configuration config/robot.json used by software and hardware | Apache-2.0 OR CERN-OHL-W-2.0 (recipient choice) |
 

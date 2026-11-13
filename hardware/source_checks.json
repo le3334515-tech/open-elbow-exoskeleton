@@ -122,11 +122,5 @@
     "status": "unavailable",
     "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
     "query_date": "2026-11-13"
-  },
-  {
-    "url": "https://www.pololu.com/file/0J1212/MD10C%20R3%20User%27s%20Manual.pdf",
-    "status": 200,
-    "bytes": 379625,
-    "query_date": "2026-11-13"
   }
 ]

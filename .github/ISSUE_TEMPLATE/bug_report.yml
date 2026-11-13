@@ -1,0 +1,52 @@
+name: Bug report / 软件与仿真问题
+description: Report a reproducible software, model, documentation, or interface defect.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: dropdown
+    id: provenance
+    attributes:
+      label: Evidence provenance / 证据来源
+      description: Identify what actually produced the observation.
+      options:
+        - Native C controller with simulated plant
+        - Python protocol or unit test
+        - Analytical calculation or CAD/URDF
+        - Physical bench measurement
+        - Wearing measurement
+        - Documentation or unexecuted design review
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Revision and environment
+      description: Commit/tag, OS, Python/compiler versions; board revision if physical.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps and exact commands
+      description: Include configuration changes, input values, units, and relevant state transitions.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+      description: State observed results separately from targets or calculations.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs, data, and configuration
+      description: Attach concise relevant records; remove credentials and personal data. For measurements include instruments and calibration.
+    validations:
+      required: true
+  - type: textarea
+    id: unexecuted
+    attributes:
+      label: Checks not executed
+      description: State any missing physical, timing, thermal, or fit verification.

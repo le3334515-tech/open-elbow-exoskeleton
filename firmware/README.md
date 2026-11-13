@@ -26,7 +26,7 @@ python firmware/build.py --target stm32
 
 1. 确认实际板为 STM32F407VET6、3.3V 逻辑，核对板载跳线和芯片封装；这不是已经拥有该板的声明。
 2. 断开电机主电源、保留逻辑电源。CMSIS-DAP/ST-Link 的 SWDIO→PA13、SWCLK→PA14、GND→GND、3.3V→VTref（是否供电依探针）；NRST 可接。
-3. 使用 OpenOCD（CMSIS-DAP）执行以下命令。当前无实体探针/控制板，**烧录未执行**。
+3. 使用 OpenOCD（CMSIS-DAP）执行以下命令。本次代理未连接核验实体探针和控制板，**本次烧录未执行**。
 
 ```console
 openocd -f interface/cmsis-dap.cfg -f target/stm32f4x.cfg -c "program firmware/build/stm32/open_elbow.elf verify reset exit"
@@ -83,4 +83,4 @@ openocd -f interface/cmsis-dap.cfg -f target/stm32f4x.cfg -c "program firmware/b
 
 只有原生 `host_sim` 在标准输入识别 `!INJECT KEY VALUE\n`，STM32线协议完全不包含该指令。KEY可为 Q(rad)、DQ(rad/s)、TEMP(°C)、CURRENT(A，保持测量覆盖)、CURRENT_AUTO(0，恢复模型)、VOLTAGE(V)、SENSOR(0异常/1正常)、ESTOP(1按下/0松开)、RESET_BUTTON(1按下/0松开)、LIMIT_MIN/MAX(1触发/0正常)。没有ack。禁能时模型由台架夹具保持，dq清零；Q注入用于表示人工移动夹具，CAL绝不会传送或自动移动模型。电流一阶模型、刚体动力学和虚拟时钟不能验证实体驱动、电气保护、传动间隙或人体适配。
 
-原生模型退出可终止进程或关闭stdin。串口实体模式不支持任何注入。全部台架、佩戴和实体急停测试均 **未执行**。
+原生模型退出可终止进程或关闭stdin。串口实体模式不支持任何注入。本次代理的台架、佩戴和实体急停测试均 **未执行**。

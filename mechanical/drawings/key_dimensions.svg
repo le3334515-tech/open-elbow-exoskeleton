@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850">
+<defs><marker id="a" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse"><path d="M7 0L0 3.5L7 7" fill="none" stroke="#34465a"/></marker><style>text{font-family:Arial,"Microsoft YaHei",sans-serif;fill:#20354b} .t{font-size:15px}.small{font-size:13px}.dim{stroke:#34465a;stroke-width:1;marker-start:url(#a);marker-end:url(#a)}.ext{stroke:#9aabb9;stroke-width:1}.ctr{stroke:#3a8498;stroke-dasharray:7 4;fill:none}.outline{stroke:#20354b;stroke-width:2;fill:#e5edf3}</style></defs>
+<rect width="1200" height="850" fill="white"/><rect x="25" y="25" width="1150" height="800" fill="none" stroke="#ccd6df"/>
+<text x="50" y="62" font-size="25" font-weight="bold">open-elbow-exoskeleton · v0.1 关键尺寸</text>
+<text x="50" y="88" class="t">单位 mm；共享参数来源 config/robot.json；正屈肘 +Z 右手；伸直为零位</text>
+<text x="50" y="120" class="t" font-weight="bold">A · 平面接口，q=0°，不同Z层以颜色区分</text>
+<rect x="248" y="202" width="322" height="56" class="outline"/><circle cx="570" cy="230" r="67.2" class="outline"/>
+<rect x="198" y="212" width="245" height="36.4" fill="#94aabd" stroke="#20354b"/>
+<rect x="570" y="205" width="259" height="50" fill="#d8eceb" stroke="#16636e" stroke-width="2"/>
+<circle cx="570" cy="230" r="58.8" fill="#d8eceb" stroke="#16636e" stroke-width="2"/>
+<rect x="682" y="212" width="245" height="36.4" fill="#80bab9" stroke="#16636e"/>
+<rect x="171" y="174" width="70" height="112" rx="15" fill="#e2f4f5" stroke="#178091" stroke-width="2"/>
+<rect x="871" y="182" width="70" height="96" rx="15" fill="#e2f4f5" stroke="#178091" stroke-width="2"/>
+<line x1="152" y1="230" x2="975" y2="230" class="ctr"/><line x1="570" y1="140" x2="570" y2="315" class="ctr"/>
+<circle cx="570" cy="230" r="8.4" fill="white" stroke="#20354b"/>
+<circle cx="465" cy="149" r="22.28" fill="#eeece4" stroke="#9c661e" stroke-width="2"/>
+<circle cx="570" cy="230" r="66.85" fill="none" stroke="#9c661e" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M451 167L531 284M480 131L607 174" fill="none" stroke="#9c661e" stroke-width="4"/>
+<line x1="465" y1="149" x2="570" y2="230" class="ctr"/>
+<line x1="206" y1="285" x2="206" y2="348" class="ext"/><line x1="570" y1="292" x2="570" y2="348" class="ext"/><line x1="906" y1="280" x2="906" y2="348" class="ext"/>
+<line x1="206" y1="335" x2="570" y2="335" class="dim"/><line x1="570" y1="335" x2="906" y2="335" class="dim"/>
+<text x="300" y="325" class="t">名义260；可调200–320</text><text x="635" y="325" class="t">名义240；可调180–280</text>
+<text x="340" y="142" class="small">20T / 6mm中间轴</text><text x="650" y="157" class="small">60T / 12mm关节轴</text>
+<text x="363" y="186" class="small">C=94.648</text><text x="635" y="183" class="small">HTD5M · 400长 · 15宽</text>
+<text x="50" y="385" class="t">固定上臂根部半径48，前臂根部42；轴承6001=12×28×8，626=6×19×6</text>
+<text x="50" y="410" class="t">长度槽M5，袖托横槽M4允许约±7.5侧调；电机/轴承支架整体±5张紧调节</text>
+<line x1="50" y1="435" x2="1150" y2="435" stroke="#ccd6df"/>
+<text x="50" y="468" class="t" font-weight="bold">B · 关节Z向叠层与传动接口（示意，完整外形见STEP）</text>
+<line x1="215" y1="500" x2="215" y2="747" class="ctr"/>
+<rect x="205" y="553" width="20" height="128" fill="#8294a5"/><text x="75" y="715" class="small">12mm钢轴 Z=−28..36</text>
+<rect x="115" y="652" width="200" height="30" fill="#e4c991" stroke="#9c661e"/><text x="345" y="676" class="t">带轮齿宽面 Z=−23..−8；两轮共面</text>
+<rect x="165" y="619" width="100" height="10" fill="#a9bdcc" stroke="#20354b"/><text x="345" y="628" class="t">上臂固定板 Z=0..5，厚5</text>
+<rect x="184" y="600" width="62" height="16" fill="#64798b"/><rect x="184" y="576" width="62" height="16" fill="#64798b"/>
+<text x="345" y="599" class="t">6001：Z=6..14 与18..26，外圈压板5..6 /26..27</text>
+<rect x="130" y="561" width="170" height="10" fill="#91c3c4" stroke="#16636e"/><text x="345" y="568" class="t">前臂板29..34；滑板34..39；轮毂底法兰28..31</text>
+<rect x="175" y="537" width="80" height="6" fill="#58a374"/><text x="345" y="541" class="t">固定传感器桥43..46；磁体36..38，间隙按实物芯片调节</text>
+<text x="50" y="748" class="t">电机M3×6，PCD31，入牙≤3；D轴Ø6×16；6×6联轴器；20T轮孔Ø6</text>
+<text x="50" y="773" class="t">60T轮需二次加工Ø36.1 + 4×Ø4.5/PCD48；前臂法兰4×Ø4.5/PCD40，相位45°</text>
+<text x="50" y="801" class="small">设计尺寸与计算估算 · 2026-11-13 · 金属件未注±0.2，孔位±0.1建议；加工配合、公差与受力复核见 ASSEMBLY.md / CALCULATIONS.md</text>
+</svg>
