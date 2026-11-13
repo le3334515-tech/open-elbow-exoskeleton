@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "open-elbow-exoskeleton"
+version = "0.1.0"
+description = "Single elbow research exoskeleton: shared C controller, bench client and simulation"
+readme = "README_EN.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+dependencies = ["pyserial>=3.5,<4", "matplotlib>=3.8,<4"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+cad = ["cadquery==2.6.1"]
+
+[project.scripts]
+elbow-exo = "elbow_exo.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["software"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["software"]
+

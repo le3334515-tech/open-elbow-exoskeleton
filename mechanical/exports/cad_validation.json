@@ -1,0 +1,469 @@
+{
+  "schema": 1,
+  "result_scope": "generated CAD topology, belt geometry and named support pairs; NOT physical assembly/strength testing",
+  "parts": [
+    {
+      "part": "M01_upper_fixed_plate",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 89616.518
+    },
+    {
+      "part": "M02_upper_telescopic_slider",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 22393.135
+    },
+    {
+      "part": "M03_joint_bearing_housing",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 20608.12
+    },
+    {
+      "part": "M19_bearing_retainer_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1359.721
+    },
+    {
+      "part": "M19_bearing_retainer_1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1359.721
+    },
+    {
+      "part": "S18_lower_shaft_collar_ENVELOPE",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 683.296
+    },
+    {
+      "part": "S19_upper_shaft_spacer",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 227.765
+    },
+    {
+      "part": "S01_bearing_6001_lower",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 4021.239
+    },
+    {
+      "part": "S02_bearing_6001_upper",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 4021.239
+    },
+    {
+      "part": "M04_joint_shaft_12mm",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7069.885
+    },
+    {
+      "part": "M05_pulley_clamp_hub",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 26116.324
+    },
+    {
+      "part": "S03_HTD5M_60T_pulley_ENVELOPE",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 109105.911
+    },
+    {
+      "part": "M06_forearm_rotating_plate",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 43245.735
+    },
+    {
+      "part": "M07_forearm_clamp_hub",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 10225.98
+    },
+    {
+      "part": "M08_forearm_telescopic_slider",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 22393.135
+    },
+    {
+      "part": "S04_rotating_stop_shoulder_pin",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 395.841
+    },
+    {
+      "part": "S05_0_fixed_stop_stud",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1103.484
+    },
+    {
+      "part": "S05_1_fixed_stop_stud",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1103.484
+    },
+    {
+      "part": "M09_motor_front_adapter",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 19232.987
+    },
+    {
+      "part": "S06_motor_standoff_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1889.864
+    },
+    {
+      "part": "S06_motor_standoff_1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1889.864
+    },
+    {
+      "part": "S06_motor_standoff_2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1889.864
+    },
+    {
+      "part": "S07_Pololu_4692_ENVELOPE",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 73566.675
+    },
+    {
+      "part": "S08_flexible_coupler_6x6_ENVELOPE",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 4523.893
+    },
+    {
+      "part": "M10_motor_jackshaft_6mm",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1300.619
+    },
+    {
+      "part": "M11_jackshaft_bearing_plate_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 9433.541
+    },
+    {
+      "part": "S09_bearing_626_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1531.526
+    },
+    {
+      "part": "M11_jackshaft_bearing_plate_1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 9433.541
+    },
+    {
+      "part": "S09_bearing_626_1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1531.526
+    },
+    {
+      "part": "S10_jackshaft_spacer_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 429.024
+    },
+    {
+      "part": "S10_jackshaft_spacer_1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 429.024
+    },
+    {
+      "part": "S10_jackshaft_spacer_2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 429.024
+    },
+    {
+      "part": "S10_jackshaft_spacer_3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 429.024
+    },
+    {
+      "part": "S11_HTD5M_20T_pulley_ENVELOPE",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 12747.087
+    },
+    {
+      "part": "S12_HTD5M_400_15_belt_ENVELOPE",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 29093.691
+    },
+    {
+      "part": "M12_belt_guard",
+      "valid": true,
+      "solids": 2,
+      "volume_mm3": 62076.666
+    },
+    {
+      "part": "M13_upper_cuff_riser",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 29501.408
+    },
+    {
+      "part": "M14_upper_cuff_clevis",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 9351.21
+    },
+    {
+      "part": "M15_forearm_cuff_clevis",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 9351.21
+    },
+    {
+      "part": "M16_upper_cuff_shell",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 36194.319
+    },
+    {
+      "part": "M17_forearm_cuff_shell",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 33086.973
+    },
+    {
+      "part": "S13_upper_cuff_quick_pin",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1018.491
+    },
+    {
+      "part": "S14_forearm_cuff_quick_pin",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1018.491
+    },
+    {
+      "part": "S16_sensor_bridge_post_-25",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3693.335
+    },
+    {
+      "part": "S16_sensor_bridge_post_25",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3693.335
+    },
+    {
+      "part": "M18_AS5600_sensor_bridge",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 8724.032
+    },
+    {
+      "part": "S17_AS5600_PCB_ENVELOPE",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 750.072
+    },
+    {
+      "part": "S15_diametric_magnet_6x2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 56.549
+    }
+  ],
+  "all_topology_valid": true,
+  "belt_exact_length_at_nominal_center_mm": 400.1055592585845,
+  "belt_length_target_mm": 400.0,
+  "belt_length_error_mm": 0.105559258584492,
+  "belt_tension_adjustment_mm": [
+    -5,
+    5
+  ],
+  "checked_support_clashes": [
+    {
+      "angle_deg": 0,
+      "pair": [
+        "M01_upper_fixed_plate",
+        "M06_forearm_rotating_plate"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 0,
+      "pair": [
+        "M03_joint_bearing_housing",
+        "M07_forearm_clamp_hub"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 0,
+      "pair": [
+        "M19_bearing_retainer_1",
+        "M07_forearm_clamp_hub"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 0,
+      "pair": [
+        "M18_AS5600_sensor_bridge",
+        "M06_forearm_rotating_plate"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 0,
+      "pair": [
+        "M12_belt_guard",
+        "M05_pulley_clamp_hub"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 60,
+      "pair": [
+        "M01_upper_fixed_plate",
+        "M06_forearm_rotating_plate"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 60,
+      "pair": [
+        "M03_joint_bearing_housing",
+        "M07_forearm_clamp_hub"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 60,
+      "pair": [
+        "M19_bearing_retainer_1",
+        "M07_forearm_clamp_hub"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 60,
+      "pair": [
+        "M18_AS5600_sensor_bridge",
+        "M06_forearm_rotating_plate"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 60,
+      "pair": [
+        "M12_belt_guard",
+        "M05_pulley_clamp_hub"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 130,
+      "pair": [
+        "M01_upper_fixed_plate",
+        "M06_forearm_rotating_plate"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 130,
+      "pair": [
+        "M03_joint_bearing_housing",
+        "M07_forearm_clamp_hub"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 130,
+      "pair": [
+        "M19_bearing_retainer_1",
+        "M07_forearm_clamp_hub"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 130,
+      "pair": [
+        "M18_AS5600_sensor_bridge",
+        "M06_forearm_rotating_plate"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "angle_deg": 130,
+      "pair": [
+        "M12_belt_guard",
+        "M05_pulley_clamp_hub"
+      ],
+      "intersection_mm3": 0.0,
+      "pass": true
+    }
+  ],
+  "hard_stop_interference_checks": [
+    {
+      "angle_deg": 0,
+      "intersection_mm3": 0.0,
+      "expected_interference": false,
+      "pass": true
+    },
+    {
+      "angle_deg": -1,
+      "intersection_mm3": 6.018193,
+      "expected_interference": true,
+      "pass": true
+    },
+    {
+      "angle_deg": 130,
+      "intersection_mm3": 0.0,
+      "expected_interference": false,
+      "pass": true
+    },
+    {
+      "angle_deg": 131,
+      "intersection_mm3": 6.018193,
+      "expected_interference": true,
+      "pass": true
+    }
+  ],
+  "hard_stop_min_deg": 0.0,
+  "hard_stop_max_deg": 130.0,
+  "bench_test": "未执行",
+  "wearing_test": "未执行"
+}

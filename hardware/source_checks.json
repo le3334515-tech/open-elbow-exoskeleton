@@ -1,0 +1,132 @@
+[
+  {
+    "id": "pololu4692",
+    "url": "https://www.pololu.com/product/4692",
+    "resolved_url": "https://www.pololu.com/product/4692",
+    "status": 200,
+    "bytes": 111203,
+    "type": "text/html; charset=utf-8",
+    "query_date": "2026-11-13"
+  },
+  {
+    "id": "cytron_manual",
+    "url": "https://docs.cytron.io/md10c",
+    "status": "unavailable",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "query_date": "2026-11-13"
+  },
+  {
+    "id": "cytron_github",
+    "url": "https://raw.githubusercontent.com/CytronTechnologies/CytronMotorDriver/master/README.md",
+    "resolved_url": "https://raw.githubusercontent.com/CytronTechnologies/CytronMotorDriver/master/README.md",
+    "status": 200,
+    "bytes": 2717,
+    "type": "text/plain; charset=utf-8",
+    "query_date": "2026-11-13"
+  },
+  {
+    "id": "stm32f407",
+    "url": "https://www.st.com/resource/en/datasheet/stm32f407ve.pdf",
+    "status": "unavailable",
+    "error": "HTTP Error 567: Unknown Status",
+    "query_date": "2026-11-13"
+  },
+  {
+    "id": "as5600",
+    "url": "https://look.ams-osram.com/m/7059eac7531a86fd/original/AS5600-DS000365.pdf",
+    "status": "unavailable",
+    "error": "HTTP Error 404: Not Found",
+    "query_date": "2026-11-13"
+  },
+  {
+    "id": "ina240",
+    "url": "https://www.ti.com/lit/ds/symlink/ina240.pdf",
+    "resolved_url": "https://www.ti.com/lit/ds/symlink/ina240.pdf",
+    "status": 200,
+    "bytes": 1935358,
+    "type": "application/pdf",
+    "query_date": "2026-11-13"
+  },
+  {
+    "id": "lm339b",
+    "url": "https://www.ti.com/lit/ds/symlink/lm339b.pdf",
+    "resolved_url": "https://www.ti.com/lit/ds/symlink/lm339b.pdf",
+    "status": 200,
+    "bytes": 2550018,
+    "type": "application/pdf",
+    "query_date": "2026-11-13"
+  },
+  {
+    "id": "sn74lvc1g74",
+    "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf",
+    "resolved_url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf",
+    "status": 200,
+    "bytes": 1427201,
+    "type": "application/pdf",
+    "query_date": "2026-11-13"
+  },
+  {
+    "id": "sn74lvc2g08",
+    "url": "https://www.ti.com/lit/ds/symlink/sn74lvc2g08.pdf",
+    "resolved_url": "https://www.ti.com/lit/ds/symlink/sn74lvc2g08.pdf",
+    "status": 200,
+    "bytes": 784167,
+    "type": "application/pdf",
+    "query_date": "2026-11-13"
+  },
+  {
+    "id": "cytron_legacy",
+    "url": "https://www.cytron.io/p-10amp-5v-30v-dc-motor-driver",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden",
+    "query_date": "2026-11-13"
+  },
+  {
+    "url": "https://www.cytron.io/p-md10c",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden",
+    "query_date": "2026-11-13"
+  },
+  {
+    "url": "https://my.cytron.io/p-md10c",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden",
+    "query_date": "2026-11-13"
+  },
+  {
+    "url": "https://www.robotshop.com/products/cytron-10a-dc-motor-driver",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden",
+    "query_date": "2026-11-13"
+  },
+  {
+    "url": "https://look.ams-osram.com/m/287d7ad97d1ca22e/original/AS5600-DS000365.pdf",
+    "status": "unavailable",
+    "error": "HTTP Error 404: Not Found",
+    "query_date": "2026-11-13"
+  },
+  {
+    "url": "https://www.st.com/resource/en/datasheet/stm32f405rg.pdf",
+    "status": "unavailable",
+    "error": "HTTP Error 567: Unknown Status",
+    "query_date": "2026-11-13"
+  },
+  {
+    "url": "https://ams-osram.com/products/sensors/position-sensors/ams-as5600-position-sensor",
+    "status": "unavailable",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "query_date": "2026-11-13"
+  },
+  {
+    "url": "https://www.cytron.io/attachments/MD10C%20R3%20User%27s%20Manual.pdf",
+    "status": "unavailable",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "query_date": "2026-11-13"
+  },
+  {
+    "url": "https://www.pololu.com/file/0J1212/MD10C%20R3%20User%27s%20Manual.pdf",
+    "status": 200,
+    "bytes": 379625,
+    "query_date": "2026-11-13"
+  }
+]

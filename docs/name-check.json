@@ -1,0 +1,6 @@
+{
+  "date": "2026-11-13",
+  "query": "https://api.github.com/search/repositories?q=open-elbow-exoskeleton+in:name&per_page=5",
+  "count": 0,
+  "examples": []
+}

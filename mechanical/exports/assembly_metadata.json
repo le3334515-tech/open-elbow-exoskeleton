@@ -1,0 +1,37 @@
+{
+  "angle_deg": 60,
+  "motor_center_mm": [
+    -75.0,
+    57.734252433022796
+  ],
+  "belt_center_mm": 94.648,
+  "pulley_pitch_radii_mm": [
+    15.915494309189533,
+    47.7464829275686
+  ],
+  "stop_contact_angle_deg": 11.158471935292342,
+  "fixed_stop_angles_deg": [
+    78.84152806470766,
+    231.15847193529234
+  ],
+  "moving_parts": [
+    "M04_joint_shaft_12mm",
+    "M05_pulley_clamp_hub",
+    "M06_forearm_rotating_plate",
+    "M07_forearm_clamp_hub",
+    "M08_forearm_telescopic_slider",
+    "M15_forearm_cuff_clevis",
+    "M17_forearm_cuff_shell",
+    "S03_HTD5M_60T_pulley_ENVELOPE",
+    "S04_rotating_stop_shoulder_pin",
+    "S14_forearm_cuff_quick_pin",
+    "S15_diametric_magnet_6x2",
+    "S18_lower_shaft_collar_ENVELOPE",
+    "S19_upper_shaft_spacer"
+  ],
+  "notes": [
+    "Commercial pulley and belt geometry is procurement envelope, not tooth manufacturing geometry.",
+    "Fastener threads and soft straps are omitted; see mechanical/BOM.csv.",
+    "Sensor bridge is stationary on two posts behind the negative-Y side of the joint."
+  ]
+}
